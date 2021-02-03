@@ -20,11 +20,15 @@ public class LineComparision{
         length2 = Math.sqrt(p+q);
         String obj1 = String.valueOf(length1);
         String obj2 = String.valueOf(length2);
-        boolean res=obj1.equals(obj2);
-        if(res == true ){
+        double res=obj1.compareTo(obj2);
+        if(res == 0 ){
             System.out.println("The Two Lines Are Equal");
-        } else {
-            System.out.println("The Two Lines Are Not Equal");
+        } 
+	else if(res > 0){
+            System.out.println("The  LineOne is greater than LineTwo ");
+        }
+	else{
+            System.out.println("The LineOne is less than LineTwo");
         }
     }
 }
