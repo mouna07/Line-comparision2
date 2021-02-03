@@ -1,34 +1,46 @@
 public class LineComparision{
  
-    static final int x1=2;
-    static final int x2=4;
-    static final int y1=5;
-    static final int y2=7;
-    static final int x3=4;
-    static final int x4=6;
-    static final int y3=9;
-    static final int y4=11;
-    public static void main(String[]args){
-        System.out.println("Welcome To Line Comparison Computation");
-        double length1=0;
-        double length2=0;
-        double x=Math.pow((x2-x1),2);
-        double y=Math.pow((y2-y1),2);
-        double p=Math.pow((x4-x3),2);
-        double q=Math.pow((y4-y3),2);
-        length1 = Math.sqrt(x+y);
-        length2 = Math.sqrt(p+q);
-        String obj1 = String.valueOf(length1);
-        String obj2 = String.valueOf(length2);
-        double res=obj1.compareTo(obj2);
-        if(res == 0 ){
-            System.out.println("The Two Lines Are Equal");
-        } 
-	else if(res > 0){
-            System.out.println("The  LineOne is greater than LineTwo ");
-        }
-	else{
-            System.out.println("The LineOne is less than LineTwo");
+    double x1, x2, y1, y2, x3, x4, y3, y4;
+    double lineOneLength, lineTwoLength;
+
+    public double lineOneCal(double x1, double x2, double y1, double y2) {
+        this.x1 = x1;
+        this.x2 = x2;
+        this.y1 = y1;
+        this.y2 = y2;
+        double x = Math.pow((x2 - x1), 2);
+        double y = Math.pow((y2 - y1), 2);
+
+        lineOneLength = Math.sqrt(x + y);
+        return lineOneLength;
+    }
+
+    public double lineTwoCal(double x3, double x4, double y3, double y4) {
+        this.x3 = x3;
+        this.x4 = x4;
+        this.y3 = y3;
+        this.y4 = y4;
+        double x = Math.pow((x4 - x3), 2);
+        double y = Math.pow((y4 - y3), 2);
+
+        lineTwoLength = Math.sqrt(x + y);
+        return lineTwoLength;
+    }
+
+    public static void main(String[] args) {
+        LineComparision l = new LineComparision();
+        double lengthOne = l.lineOneCal(2, 4, 5, 7);
+        double lengthTwo = l.lineTwoCal(4, 6, 9, 11);
+        String length1 = String.valueOf(lengthOne);
+        String length2 = String.valueOf(lengthTwo);
+        double res = length1.compareTo(length2);
+        if (res == 0) {
+            System.out.println("The Two Line Are Equal");
+        } else if (res > 0) {
+            System.out.println("LineOne is greater than LineTwo");
+
+        } else {
+            System.out.println("LineTwo is greater than LineOne");
         }
     }
 }
