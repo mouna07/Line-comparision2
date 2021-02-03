@@ -3,6 +3,7 @@ public class LineComparision{
     double x1, x2, y1, y2, x3, x4, y3, y4;
     double lineOneLength, lineTwoLength;
 
+    // method for line1
     public double lineOneCal(double x1, double x2, double y1, double y2) {
         this.x1 = x1;
         this.x2 = x2;
@@ -14,7 +15,8 @@ public class LineComparision{
         lineOneLength = Math.sqrt(x + y);
         return lineOneLength;
     }
-
+    
+    // method for line2
     public double lineTwoCal(double x3, double x4, double y3, double y4) {
         this.x3 = x3;
         this.x4 = x4;
